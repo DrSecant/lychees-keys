@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <title>Lychees Keys</title>
+
+    <!-- Font imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Indie+Flower&family=Josefin+Sans&family=Kavoon&family=Monoton&family=Nanum+Pen+Script&family=Permanent+Marker&family=Press+Start+2P&family=Rubik+80s+Fade&family=Shadows+Into+Light+Two&family=Six+Caps&family=Syncopate&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Audiowide&family=Bangers&family=Carter+One&family=Fugaz+One&family=Libre+Barcode+39&family=Shrikhand&family=Ultra&family=Unica+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- jQuery Import -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- Anime.js Import -->
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+    <!-- Fontawesome Import -->
+    <script src="https://kit.fontawesome.com/bf388f9580.js" crossorigin="anonymous"></script>
+    <!-- Import the webpage's javascript files -->
+    <script src="/scripts/script.js" defer></script>
+    <script src="/scripts/routes.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <div class="header">
+        <div class="logo-wrapper">
+          <img class="logo" src="https://cdn.glitch.global/b5f62b77-7a2a-4959-912b-e003c8a30e5e/NewLogo-01.svg?v=1674705919462">
+        </div>
+        <nav class="menu">
+          <ul class="nav-links">
+            <!-- Home -->
+            <li class="nav-link">
+              <a href="/">Home</a>
+            </li>
+            <!-- Portfolio -->
+            <li class="nav-link">
+              <a href="#/portfolio">Portfolio</a>
+            </li>
+            <!-- Contact -->
+            <li class="nav-link">
+              <a href="#/contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      
+      <!-- Page Body -->
+      <div id="pageContent"></div>
+      
+      <!-- Footer -->
+      <div class="footer">
+        <div class="social-links">
+          <span class="social-link">
+            <i class="fa-brands fa-youtube fa-xl"></i>
+            <a>Lychee's Keys</a>
+          </span>
+          <span class="social-link">
+            <i class="fa-brands fa-instagram fa-xl"></i>
+            <a>lychees.keys</a>
+          </span>
+          <span class="social-link">
+            <i class="fa-solid fa-envelope fa-xl"></i>
+            <a>lychees.keys@gmail.com</a>
+          </span>
+        </div>
+        <div class="cp-statement">
+          <span><i class="fa-regular fa-copyright"></i> 2023 Anthony Pellegrino</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Menu Text Filter Definition -->
+    <svg class="filters">
+      <defs>
+        <filter id="displacementFilter">
+          <feturbulence
+            class="turb"
+            type="turbulence"
+            basefrequency="0.09 0.5"
+            numoctaves="8"
+            seed="0"
+            result="turbulence"
+          />
+          <fedisplacementmap
+            class="disp"
+            in2="noise"
+            in="SourceGraphic"
+            scale="7"
+          />
+        </filter>
+      </defs>
+    </svg>
+  </body>
+</html>
