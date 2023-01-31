@@ -13,16 +13,21 @@ const Home = () => (
                 </Typography>
                 <Divider className="card-divider" variant="middle" />
                 <Box className="card-content" sx={{ m: 2, mb: 0 }}>
-                  <Typography sx={{ mb: 2 }} variant="body1">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin libero at dolor bibendum malesuada. Curabitur molestie pretium massa vel dictum. 
-                    Nullam et dui urna. Pellentesque malesuada venenatis est et pharetra. Etiam sed sodales dolor. Praesent nec faucibus diam, quis imperdiet leo. Duis eleifend 
-                    congue lectus, ac tincidunt lorem finibus quis. Vestibulum gravida lobortis sapien, ut finibus neque cursus sed.
+                  <Typography sx={{ mb: 1 }} variant="body1">
+                  Anthony Pellegrino is a 2D Animator and Character Artist from Long Island, NY.
+                  </Typography>
+                  <Typography sx={{ mb: 1 }} variant="body1">
+                  His journey began with a myriad of cartoon influences that opened his eyes to the freedom of animation. 
+                  From there he continued sharpening his skills through traditional art studies,  as well as, practicing story craft.
+                  </Typography>
+                  <Typography sx={{ mb: 1 }} variant="body1">
+                  His college career began with a brief stint as an architecture major before realizing his true dream 
+                  to inspire the next generation the way he was inspired in his youth. 
                   </Typography>
                   <Typography variant="body1">
-                    Integer posuere elit arcu, ut bibendum felis porttitor et. Nunc vitae lobortis erat, quis feugiat neque. Duis tempor vestibulum nulla id molestie. Integer 
-                    varius ac ex at laoreet. Integer in nunc commodo, placerat lacus et, facilisis sem. Duis suscipit lobortis turpis, ac efficitur mauris. Integer tincidunt, velit 
-                    vel malesuada gravida, ex purus aliquet felis, eget porttitor ex tellus a dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac 
-                    turpis egestas. Vestibulum et mi dignissim, commodo nulla vel, venenatis eros. 
+                  Transferring to 2D Animation he began working hard putting his skills to the test learning digital art. 
+                  Tapping into the creative skills he's built his whole life he now crafts work that blossoms from the intricate 
+                  weave of character and plot.
                   </Typography>
                 </Box>
               </CardContent>
