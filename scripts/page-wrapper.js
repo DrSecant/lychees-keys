@@ -14,9 +14,9 @@ const App = () => (
                 <nav class="menu">
                     <ul class="nav-links">
                         {/* Home */}
-                        <li class="nav-link"><Link to="/">Home</Link></li>
+                        <li class="nav-link"><Link to="/">Portfolio</Link></li>
                         {/* Portfolio */}
-                        <li class="nav-link"><Link to="/portfolio">Portfolio</Link></li>
+                        <li class="nav-link"><Link to="/reel">Reel</Link></li>
                         {/* Contact */}
                         <li class="nav-link"><Link to="/contact">Contact</Link></li>
                     </ul>
@@ -26,8 +26,8 @@ const App = () => (
 
         {/* Page Body */}
         <div id="pageContent">
-            <Route path="/" exact component={Home} />
-            <Route path="/portfolio" component={Portfolio} />
+            <Route path="/" exact component={Portfolio} />
+            <Route path="/reel" component={Home} />
             <Route path="/contact" component={Contact} />
         </div>
 
