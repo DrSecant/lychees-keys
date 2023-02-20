@@ -170,12 +170,32 @@ body {
 #pageContent {
   margin: 0;
   padding: 16px;
-  max-height: 80vh;
+  height: 80vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 /** Footer Style **/
+.fab-menu {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.fab-menu button {
+  background-color: var(--vlight-red);
+  margin: 8px;
+}
+  .fab-menu button:hover {
+    background-color: var(--vlight-red);
+    filter: brightness(50%);
+  }
+.fab-menu i {
+  color: white;
+}
+
 .footer {
   background-color: var(--vdark-red);
   position: sticky;
@@ -212,27 +232,6 @@ body {
 }
 .cp-statement > * {
   color: var(--light-grey);
-}
-
-/** Home Page Style **/
-.info-card {
-  background-color: var(--light-red) !important;
-}
-.card-title {
-  z-index: 1;
-  font-family: 'Fugaz One', cursive !important;
-  color: var(--light-grey);
-  text-shadow: 3px 0px var(--gold);
-}
-.card-divider {
-  background-color: var(--gold);
-}
-.card-content {
-  color: var(--light-grey);
-}
-
-.card-content p{
-  font-family: 'Chakra Petch', sans-serif;
 }
 
 /** Filter Style **/

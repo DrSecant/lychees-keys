@@ -1,4 +1,4 @@
-const { Slide } = window['MaterialUI'];
+const { Zoom, List, Fab, Box } = window['MaterialUI'];
 const Link = ReactRouterDOM.Link;
 const Route = ReactRouterDOM.Route;
 const HashRouter = ReactRouterDOM.HashRouter;
@@ -27,32 +27,28 @@ const App = () => (
         {/* Page Body */}
         <div id="pageContent">
             <Route path="/" exact component={Portfolio} />
-            <Route path="/reel" component={Home} />
+            <Route path="/reel" component={Reel} />
             <Route path="/contact" component={Contact} />
         </div>
 
         {/* Footer */}
-        <Slide direction="up" in={true} mountOnEnter unmountOnExit>
-            <div class="footer">
-                <div class="social-links">
-                    <span class="social-link">
-                        <i class="fa-brands fa-youtube fa-xl"></i>
-                        <a>Lychee's Keys</a>
-                    </span>
-                    <span class="social-link">
-                        <i class="fa-brands fa-instagram fa-xl"></i>
-                        <a>lychees.keys</a>
-                    </span>
-                    <span class="social-link">
-                        <i class="fa-solid fa-envelope fa-xl"></i>
-                        <a>lychees.keys@gmail.com</a>
-                    </span>
-                </div>
-                <div class="cp-statement">
-                    <span><i class="fa-regular fa-copyright"></i> 2023 Anthony Pellegrino</span>
-                </div>
-            </div>
-        </Slide>
+        <Box className="fab-menu">
+            <Zoom in={true} mountOnEnter unmountOnExit>
+                <Fab>
+                    <i className="fa-brands fa-vimeo-v fa-xl"></i>
+                </Fab>
+            </Zoom>
+            <Zoom in={true} mountOnEnter unmountOnExit>
+                <Fab>
+                    <i className="fa-brands fa-instagram fa-xl"></i>
+                </Fab>
+            </Zoom>
+            <Zoom in={true} mountOnEnter unmountOnExit>
+                <Fab>
+                    <i className="fa-solid fa-envelope fa-xl"></i>
+                </Fab>
+            </Zoom>
+        </Box>
     </HashRouter>
 );
 

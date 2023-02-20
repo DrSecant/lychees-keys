@@ -2,34 +2,40 @@ const { Grid, Box, Modal, IconButton, Icon } = window['MaterialUI'];
 const { useState, useCallback } = React;
 const videos = ([
   {
-    thumbnail: '../rsc/rotoscope-animation.jpg',
-    thumbnailHover: '../rsc/rotoscope-animation.gif',
+    thumbnail: '../rsc/Rotoscope Animation.jpg',
+    thumbnailHover: '../rsc/Rotoscope Animation.gif',
     vimeoId: '637579439',
     order: 0,
   },
   {
-    thumbnail: '../rsc/rotoscope-animation.jpg',
-    thumbnailHover: '../rsc/rotoscope-animation.gif',
+    thumbnail: '../rsc/Rotoscope Animation.jpg',
+    thumbnailHover: '../rsc/Rotoscope Animation.gif',
     vimeoId: '637579439',
-    order: 0,
+    order: 1,
   },
   {
-    thumbnail: '../rsc/rotoscope-animation.jpg',
-    thumbnailHover: '../rsc/rotoscope-animation.gif',
+    thumbnail: '../rsc/Rotoscope Animation.jpg',
+    thumbnailHover: '../rsc/Rotoscope Animation.gif',
     vimeoId: '637579439',
-    order: 0,
+    order: 2,
   },
   {
-    thumbnail: '../rsc/rotoscope-animation.jpg',
-    thumbnailHover: '../rsc/rotoscope-animation.gif',
+    thumbnail: '../rsc/Rotoscope Animation.jpg',
+    thumbnailHover: '../rsc/Rotoscope Animation.gif',
     vimeoId: '637579439',
-    order: 0,
+    order: 3,
   },
   {
-    thumbnail: '../rsc/rotoscope-animation.jpg',
-    thumbnailHover: '../rsc/rotoscope-animation.gif',
+    thumbnail: '../rsc/Rotoscope Animation.jpg',
+    thumbnailHover: '../rsc/Rotoscope Animation.gif',
     vimeoId: '637579439',
-    order: 0,
+    order: 4,
+  },
+  {
+    thumbnail: '../rsc/Rotoscope Animation.jpg',
+    thumbnailHover: '../rsc/Rotoscope Animation.gif',
+    vimeoId: '637579439',
+    order: 5,
   },
 ]).sort((video1, video2) => video1.order - video2.order);
 
