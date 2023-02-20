@@ -15,3 +15,7 @@ KEY_SCALES.forEach((scale, seed) => {
     duration: DURATION / KEY_SCALES.length
   });
 });
+
+const openInNewTab = (url) => {
+  window.open(url, '_blank');
+};

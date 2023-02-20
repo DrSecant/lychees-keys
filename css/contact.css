@@ -16,3 +16,10 @@
   .card-content p{
     font-family: 'Chakra Petch', sans-serif;
   }
+
+.avatar {
+  width: 128px;
+  height: 128px;
+  float: left;
+  margin-right: 16px;
+}

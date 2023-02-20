@@ -1,4 +1,4 @@
-const { Grid, Item, Box, Card, CardContent, Typography, Divider, Slide } = window['MaterialUI'];
+const { Grid, Item, Box, Card, CardContent, Typography, Divider, Slide, Avatar } = window['MaterialUI'];
 
 const Contact = () => (
   <div class="contact-wrapper">
@@ -13,6 +13,7 @@ const Contact = () => (
                 </Typography>
                 <Divider className="card-divider" variant="middle" />
                 <Box className="card-content" sx={{ m: 2, mb: 0 }}>
+                  <Avatar className="avatar" alt="Anthony Pellegrino" src="../rsc/Anthony Portrait.jpg" />
                   <Typography sx={{ mb: 1 }} variant="body1">
                   Anthony Pellegrino is a 2D Animator and Character Artist from Long Island, NY.
                   </Typography>

@@ -34,17 +34,17 @@ const App = () => (
         {/* Footer */}
         <Box className="fab-menu">
             <Zoom in={true} mountOnEnter unmountOnExit>
-                <Fab>
+                <Fab onClick={() => openInNewTab('https://vimeo.com/user150503860')}>
                     <i className="fa-brands fa-vimeo-v fa-xl"></i>
                 </Fab>
             </Zoom>
             <Zoom in={true} mountOnEnter unmountOnExit>
-                <Fab>
+                <Fab onClick={() => openInNewTab('https://www.instagram.com/lychees.keys/')}>
                     <i className="fa-brands fa-instagram fa-xl"></i>
                 </Fab>
             </Zoom>
             <Zoom in={true} mountOnEnter unmountOnExit>
-                <Fab>
+                <Fab onClick={() => openInNewTab('mailto:lychees.keys@gmail.com')}>
                     <i className="fa-solid fa-envelope fa-xl"></i>
                 </Fab>
             </Zoom>

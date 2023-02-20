@@ -3,11 +3,11 @@
 }
 
 .thumbnails {
-    padding-left: 15%;
-    padding-right: 15%;
+    padding: 16px;
 }
 .thumbnail-container, .thumbnail, .thumbnail-bg {
-    width: 600px;
+    width: 20vw;
+    min-width: 200px;
     pointer-events: none;
 }
 .thumbnail-container {
@@ -57,14 +57,15 @@
     transform: translate(-50%, -50%);
 }
 .close-icon {
+    transform: scale(0.6);
     position: absolute !important;
     top: var(--close-button-padding);
     right: var(--close-button-padding);
-    background-color: var(--dark-grey);
+    background-color: var(--dark-grey) !important;
 }
 .close-icon:hover {
     filter: brightness(50%);
-    background-color: var(--dark-grey);
+    background-color: var(--dark-grey) !important;
 }
     .close-icon .fa-xmark {
         color: white;

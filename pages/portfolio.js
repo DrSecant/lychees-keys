@@ -1,4 +1,4 @@
-const { Grid, Box, Modal, IconButton, Icon } = window['MaterialUI'];
+const { Grid, Box, Modal, Fab, Icon } = window['MaterialUI'];
 const { useState, useCallback } = React;
 const videos = ([
   {
@@ -111,28 +111,46 @@ const Portfolio = () => {
       <Modal className="video-modal" open={!!videoId} fullScreen>
         <Box className="modal-content-wrapper">
           <Box className="modal-content">
-            <IconButton className="close-icon" size="small" onClick={() => closeModal()}>
-              <i className="fa-sharp fa-solid fa-xmark"></i>
-            </IconButton>
+            <Fab className="close-icon" size="small" onClick={() => closeModal()}>
+              <i className="fa-sharp fa-solid fa-xmark fa-xl"></i>
+            </Fab>
             <iframe class="video-frame" src={`https://player.vimeo.com/video/${videoId}?autoplay=1&color=612d2d`} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
           </Box>
         </Box>
       </Modal>
       
       {/* Video Selection Grid */}
-      <Grid className="thumbnails" container direction="row" justifyContent="center" alignItems="center">
-        {videos.map((video, index) => {
-          const imgSrc = (index === hoverItem) ? video.thumbnailHover : video.thumbnail;
-          return (
-            <Grid key={index} onClick={() => openModal(video.vimeoId)} onMouseEnter={() => setHoverItem(index)} onMouseLeave={() => setHoverItem(null)} sx={{ m: 3, zIndex: 3 }}>
-              <Box className="thumbnail-container">
-                <i class={"fa-solid fa-play" + getHoverClass(index)}></i>
-                <img class="thumbnail" src={imgSrc} key={imgSrc} />
-                <img class="thumbnail-bg" src={video.thumbnail} />
-              </Box>
-            </Grid>
-          );
-        })}
+      <Grid container direction="column">
+        <Grid display="flex" justifyContent="center" alignItems="center">
+          <Box sx={{ width: '80%' }}>
+            <Slide direction="left" in={true} mountOnEnter unmountOnExit>
+              <Card id="videoCard" className="info-card">
+                <CardContent>
+                  <Typography className="card-title" sx={{ ml: 2, mb: 2 }} variant="h5" component="div">
+                    Videos
+                  </Typography>
+                  <Divider className="card-divider" variant="middle" />
+                  <Box className="card-content" sx={{ m: 2, mb: 0 }}>
+                    <Grid className="thumbnails" container direction="row" justifyContent="center" alignItems="center">
+                      {videos.map((video, index) => {
+                        const imgSrc = (index === hoverItem) ? video.thumbnailHover : video.thumbnail;
+                        return (
+                          <Grid key={index} onClick={() => openModal(video.vimeoId)} onMouseEnter={() => setHoverItem(index)} onMouseLeave={() => setHoverItem(null)} sx={{ m: 3, zIndex: 3 }}>
+                            <Box className="thumbnail-container">
+                              <i class={"fa-solid fa-play" + getHoverClass(index)}></i>
+                              <img class="thumbnail" src={imgSrc} key={imgSrc} />
+                              <img class="thumbnail-bg" src={video.thumbnail} />
+                            </Box>
+                          </Grid>
+                        );
+                      })}
+                    </Grid>
+                  </Box>
+                </CardContent>
+              </Card>
+            </Slide>
+          </Box>
+        </Grid>
       </Grid>
     </div>
   );
