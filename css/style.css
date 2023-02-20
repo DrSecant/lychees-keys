@@ -14,14 +14,23 @@ font-family: 'Kavoon', cursive; top
 font-family: 'Six Caps', sans-serif; top
 
 font-family: 'Alfa Slab One', cursive; top
-font-family: 'Audiowide', cursive;
+font-family: 'Audiowide', cursive; Yesish
 font-family: 'Bangers', cursive;
 font-family: 'Carter One', cursive; top
 font-family: 'Fugaz One', cursive; top
 font-family: 'Libre Barcode 39', cursive;
-font-family: 'Shrikhand', cursive;
-font-family: 'Ultra', serif;
-font-family: 'Unica One', cursive;
+font-family: 'Shrikhand', cursive; maybe
+font-family: 'Ultra', serif; maybe
+font-family: 'Unica One', cursive; yesish
+
+font-family: 'Chakra Petch', sans-serif;
+font-family: 'Itim', cursive;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Orbitron', sans-serif;
+font-family: 'Play', sans-serif;
+font-family: 'PT Sans', sans-serif;
+font-family: 'Russo One', sans-serif;
+font-family: 'Teko', sans-serif;
 */
 :root {
   /** Color Theming **/
@@ -220,6 +229,10 @@ body {
 }
 .card-content {
   color: var(--light-grey);
+}
+
+.card-content p{
+  font-family: 'Chakra Petch', sans-serif;
 }
 
 /** Filter Style **/
