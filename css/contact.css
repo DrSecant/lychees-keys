@@ -18,8 +18,19 @@
   }
 
 .avatar {
-  width: 128px;
-  height: 128px;
+  width: 128px !important;
+  height: 128px !important;
   float: left;
   margin-right: 16px;
+}
+
+.social-info {
+  width: 33%;
+}
+  .social-text * {
+    font-family: 'Chakra Petch', sans-serif;
+  }
+
+.fa-copy {
+  color: var(--light-grey);
 }
