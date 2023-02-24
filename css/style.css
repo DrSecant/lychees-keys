@@ -49,9 +49,9 @@ font-family: 'Teko', sans-serif;
   --bg-img-size: 125px;
   
   /** Misc. Style Definitions **/
-  --border: 5px double var(--gold);
-  --border-radius: 20px 20px 0px 0px;
-  --animation-duration: 2s infinite;
+  --anim-star-far: animStar 50s linear infinite;
+  --anim-star-mid: animStar 100s linear infinite;
+  --anim-star-near: animStar 150s linear infinite;
 }
 
 /** Nav Menu Style **/
@@ -131,36 +131,69 @@ body {
   overflow: hidden;
 }
 
-@-webkit-keyframes bg-scrolling-reverse {
-  100% { background-position: var(--bg-img-size) var(--bg-img-size); }
-}
-@-moz-keyframes    bg-scrolling-reverse {
-  100% { background-position: var(--bg-img-size) var(--bg-img-size); }
-}
-@-o-keyframes      bg-scrolling-reverse {
-  100% { background-position: var(--bg-img-size) var(--bg-img-size); }
-}
-@keyframes         bg-scrolling-reverse {
-  100% { background-position: var(--bg-img-size) var(--bg-img-size); }
-}
-
 .wrapper {
-  border-top: 1px solid var(--gold);
-  border-radius: 20px 20px 0px 0px;
-  background-image: url("https://cdn.glitch.global/b5f62b77-7a2a-4959-912b-e003c8a30e5e/BkgrdTile-02-01.svg?v=1674706991473");
-  background-size: var(--bg-img-size);
+  perspective: 1px;
+  background: radial-gradient(ellipse at bottom, #351b1b 0%, #0f0909 100%);
+  overflow: hidden;
   height: 100%;
   display: flex;
   flex-flow: column;
-  -webkit-animation: bg-scrolling-reverse var(--animation-duration); /* Safari 4+ */
-  -moz-animation:    bg-scrolling-reverse var(--animation-duration); /* Fx 5+ */
-  -o-animation:      bg-scrolling-reverse var(--animation-duration); /* Opera 12+ */
-  animation:         bg-scrolling-reverse var(--animation-duration); /* IE 10+ */
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function:    linear;
-  -o-animation-timing-function:      linear;
-  animation-timing-function:         linear;
 }
+
+@-webkit-keyframes animStar {
+  from
+    {transform: translateY(0px)}
+  to		
+    {transform: translateY(-2000px)}
+}
+@-moz-keyframes    animStar {
+  from
+    {transform: translateY(0px)}
+  to		
+    {transform: translateY(-2000px)}
+}
+@-o-keyframes      animStar {
+  from
+    {transform: translateY(0px)}
+  to		
+    {transform: translateY(-2000px)}
+}
+@keyframes         animStar {
+  from
+    {transform: translateY(0px)}
+  to		
+    {transform: translateY(-2000px)}
+}
+.star-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.star-bg-after {
+  position: absolute;
+  top: 2000px;
+  left: 0;
+  z-index: -1;
+}
+  .star-anim-1 {
+    -webkit-animation: var(--anim-star-far); /* Safari 4+ */
+    -moz-animation:    var(--anim-star-far); /* Fx 5+ */
+    -o-animation:      var(--anim-star-far); /* Opera 12+ */
+    animation:         var(--anim-star-far); /* IE 10+ */
+  }
+  .star-anim-2 {
+    -webkit-animation: var(--anim-star-mid); /* Safari 4+ */
+    -moz-animation:    var(--anim-star-mid); /* Fx 5+ */
+    -o-animation:      var(--anim-star-mid); /* Opera 12+ */
+    animation:         var(--anim-star-mid); /* IE 10+ */
+  }
+  .star-anim-3 {
+    -webkit-animation: var(--anim-star-near); /* Safari 4+ */
+    -moz-animation:    var(--anim-star-near); /* Fx 5+ */
+    -o-animation:      var(--anim-star-near); /* Opera 12+ */
+    animation:         var(--anim-star-near); /* IE 10+ */
+  }
 
 #pageContent {
   flex: 1 1 auto;

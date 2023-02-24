@@ -1,7 +1,16 @@
-const { Grid, Item, Box, Card, CardContent, Typography, Divider, Slide, Avatar, List, ListItem, ListItemAvatar, ListItemText, IconButton } = window['MaterialUI'];
+const { Grid, Item, Box, Card, CardContent, Typography, Divider, Slide, Avatar, List, ListItem, ListItemAvatar, ListItemText, IconButton, Snackbar, Alert } = window['MaterialUI'];
+const { useState } = React;
 
-const Contact = () => (
-  <div class="contact-wrapper">
+const Contact = () => {
+  const [success, setSuccess] = useState(false);
+  const [failure, setFailure] = useState(false);
+  const openSuccess = () => setSuccess(true);
+  const closeSuccess = () => setSuccess(false);
+  const openFailure = () => setFailure(true);
+  const closeFailure = () => setFailure(false);
+  const copyText = (text) => copyToClipboard(text, openSuccess, openFailure);
+
+  return (<div class="contact-wrapper">
     <Grid container direction="column">
       {/* About Card */}
       <Grid display="flex" justifyContent="center" alignItems="center">
@@ -56,7 +65,7 @@ const Contact = () => (
                     {/* Vimeo Link */}
                     <ListItem
                       secondaryAction={
-                        <IconButton size="small" aria-label="copy">
+                        <IconButton size="small" aria-label="copy" onClick={() => copyText("https://vimeo.com/user150503860")}>
                           <i className="fa-regular fa-copy"></i>
                         </IconButton>
                       }
@@ -73,7 +82,7 @@ const Contact = () => (
                     {/* Instagram Link */}
                     <ListItem
                       secondaryAction={
-                        <IconButton size="small" aria-label="copy">
+                        <IconButton size="small" aria-label="copy" onClick={() => copyText("@lychees.keys")}>
                           <i className="fa-regular fa-copy"></i>
                         </IconButton>
                       }
@@ -90,7 +99,7 @@ const Contact = () => (
                     {/* Email Link */}
                     <ListItem
                       secondaryAction={
-                        <IconButton size="small" aria-label="copy">
+                        <IconButton size="small" aria-label="copy" onClick={() => copyText("lychees.keys@gmail.com")}>
                           <i className="fa-regular fa-copy"></i>
                         </IconButton>
                       }
@@ -112,5 +121,17 @@ const Contact = () => (
         </Box>
       </Grid>
     </Grid>
-  </div>
-);
+
+    {/* Snackbar */}
+    <Snackbar open={success} autoHideDuration={6000} onClose={closeSuccess}>
+      <Alert severity="success" sx={{ width: '100%' }}>
+        Text copied to clipboard!
+      </Alert>
+    </Snackbar>
+    <Snackbar open={failure} autoHideDuration={6000} onClose={closeFailure}>
+      <Alert severity="error" sx={{ width: '100%' }}>
+        Text failed to copy to clipboard.
+      </Alert>
+    </Snackbar>
+  </div>);
+};

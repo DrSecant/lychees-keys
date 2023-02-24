@@ -19,3 +19,16 @@ KEY_SCALES.forEach((scale, seed) => {
 const openInNewTab = (url) => {
   window.open(url, '_blank');
 };
+
+const copyToClipboard = (text, successCallback = null, failureCallback = null) => {
+  navigator.clipboard.writeText(text).then(
+      () => {
+          /* clipboard successfully set */
+          if (!!successCallback) successCallback();
+      },
+      () => {
+          /* clipboard write failed */
+          if (!!failureCallback) failureCallback();
+      }
+  );
+};

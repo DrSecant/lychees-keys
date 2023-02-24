@@ -24,9 +24,9 @@
   margin-right: 16px;
 }
 
-  .social-text * {
-    font-family: 'Chakra Petch', sans-serif;
-  }
+.social-text * {
+  font-family: 'Chakra Petch', sans-serif;
+}
 
 .fa-copy {
   color: var(--light-grey);

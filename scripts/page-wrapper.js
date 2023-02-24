@@ -1,10 +1,55 @@
 const { Zoom, List, Fab, Box } = window['MaterialUI'];
+const { Fragment } = React;
 const Link = ReactRouterDOM.Link;
 const Route = ReactRouterDOM.Route;
 const HashRouter = ReactRouterDOM.HashRouter;
 
-const App = () => (
-    <HashRouter>
+const STAR_LAYER = {
+    NEAR: { 
+        filterId: "starFilter1",
+        frequency: 0.1,
+        weight: -5,
+        animClass: "star-anim-1"
+    },
+    MID: {
+        filterId: "starFilter2",
+        frequency: 0.2,
+        weight: -5,
+        animClass: "star-anim-2"
+    },
+    FAR: {
+        filterId: "starFilter3",
+        frequency: 0.4,
+        weight: -5,
+        animClass: "star-anim-3"
+    }
+};
+
+const StarBG = ({ starLayer }) => {
+    const { filterId, frequency, weight, animClass } = starLayer;
+    return (<Fragment>
+        <svg className={"star-bg " + animClass} xmlns="http://www.w3.org/2000/svg" width="100%" height="2000px">
+            <filter id={filterId}>
+                <feTurbulence baseFrequency={frequency}/>
+                <feColorMatrix values={`0 0 0 9 ${weight}
+                                        0 0 0 9 ${weight}
+                                        0 0 0 9 ${weight}
+                                        0 0 0 0 1`}/>
+                <feColorMatrix values="1 0 0 0 0
+                                    0 1 0 0 0
+                                    0 0 1 0 0
+                                    3 -1 -1 0 0"/>
+            </filter>
+            <rect width="100%" height="100%" filter={`url(#${filterId})`}/>
+        </svg>
+        <svg className={"star-bg-after " + animClass} xmlns="http://www.w3.org/2000/svg" width="100%" height="2000px">
+            <rect width="100%" height="100%" filter={`url(#${filterId})`}/>
+        </svg>
+    </Fragment>);
+}; 
+
+const App = () => {
+    return (<HashRouter>
         {/* Header */}
         <Slide direction="down" in={true} mountOnEnter unmountOnExit>
             <div class="header">
@@ -31,7 +76,7 @@ const App = () => (
             <Route path="/contact" component={Contact} />
         </div>
 
-        {/* Footer */}
+        {/* Social Link Menu */}
         <Box className="fab-menu">
             <Zoom in={true} mountOnEnter unmountOnExit>
                 <Fab onClick={() => openInNewTab('https://vimeo.com/user150503860')}>
@@ -49,7 +94,12 @@ const App = () => (
                 </Fab>
             </Zoom>
         </Box>
-    </HashRouter>
-);
+
+        {/* Star BG Setup */}
+        <StarBG starLayer={STAR_LAYER.NEAR} />
+        <StarBG starLayer={STAR_LAYER.MID} />
+        <StarBG starLayer={STAR_LAYER.FAR} />
+    </HashRouter>);
+};
 
 ReactDOM.render(<App />, document.querySelector('#root'));
