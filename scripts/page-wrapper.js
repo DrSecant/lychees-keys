@@ -1,5 +1,5 @@
-const { Zoom, List, Fab, Box } = window['MaterialUI'];
-const { Fragment } = React;
+const { Zoom, List, Fab, Box, Menu, MenuItem } = window['MaterialUI'];
+const { Fragment, useState } = React;
 const Link = ReactRouterDOM.Link;
 const Route = ReactRouterDOM.Route;
 const HashRouter = ReactRouterDOM.HashRouter;
@@ -49,6 +49,15 @@ const StarBG = ({ starLayer }) => {
 }; 
 
 const App = () => {
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = !!anchorEl;
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
+
     return (<HashRouter>
         {/* Header */}
         <Slide direction="down" in={true} mountOnEnter unmountOnExit>
@@ -58,9 +67,13 @@ const App = () => {
                 </div>
                 <nav class="menu">
                     <ul class="nav-links">
-                        {/* Home */}
-                        <li class="nav-link"><Link to="/">Portfolio</Link></li>
                         {/* Portfolio */}
+                        <li class="nav-link" id="portfolio-button"
+                            aria-controls={open ? 'portfolio-menu' : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? 'true' : undefined}
+                            onClick={handleClick}><Link>Portfolio</Link></li>
+                        {/* Reel */}
                         <li class="nav-link"><Link to="/reel">Reel</Link></li>
                         {/* Contact */}
                         <li class="nav-link"><Link to="/contact">Contact</Link></li>
@@ -68,6 +81,26 @@ const App = () => {
                 </nav>
             </div>
         </Slide>
+
+        {/* Header Menus */}
+        <Menu 
+        id="portfolio-menu"
+        aria-labelledby="portfolio-button"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+      >
+        <MenuItem class="nav-link-small" onClick={handleClose}><Link to="/">Animation</Link></MenuItem>
+        <MenuItem class="nav-link-small" onClick={handleClose}><Link to="/illustration">Illustration</Link></MenuItem>
+      </Menu>
 
         {/* Page Body */}
         <div id="pageContent">
