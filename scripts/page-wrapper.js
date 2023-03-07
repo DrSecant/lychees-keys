@@ -30,15 +30,18 @@ const StarBG = ({ starLayer }) => {
     return (<Fragment>
         <svg className={"star-bg " + animClass} xmlns="http://www.w3.org/2000/svg" width="100%" height="2000px">
             <filter id={filterId}>
+                {/* Generate Noise */}
                 <feTurbulence baseFrequency={frequency}/>
+                {/* Convert to greyscale and shift most values to white/black */}
                 <feColorMatrix values={`0 0 0 9 ${weight}
                                         0 0 0 9 ${weight}
                                         0 0 0 9 ${weight}
                                         0 0 0 0 1`}/>
+                {/* Make black transparent */}
                 <feColorMatrix values="1 0 0 0 0
-                                    0 1 0 0 0
-                                    0 0 1 0 0
-                                    3 -1 -1 0 0"/>
+                                       0 1 0 0 0
+                                       0 0 1 0 0
+                                       3 -1 -1 0 0"/>
             </filter>
             <rect width="100%" height="100%" filter={`url(#${filterId})`}/>
         </svg>
