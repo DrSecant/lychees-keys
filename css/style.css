@@ -44,6 +44,7 @@ font-family: 'Teko', sans-serif;
   --grey: #727272;
   --light-grey: #a9a9a9;
   --gold: #a18d32;
+  --light-gold: #c9be89;
   
   /** Size definitions **/
   --bg-img-size: 125px;
@@ -71,7 +72,7 @@ font-family: 'Teko', sans-serif;
   padding: 16px;
 }
 
-.nav-link a {
+.nav-link a, .nav-link a:visited {
   font-family: 'Fugaz One', cursive;
   font-size: 40px;
   color: var(--light-grey);
@@ -80,6 +81,18 @@ font-family: 'Teko', sans-serif;
 }
 
 .nav-link a:hover {
+  filter: url('#displacementFilter');
+}
+
+.nav-link-small a, .nav-link-small a:visited {
+  font-family: 'Fugaz One', cursive;
+  font-size: 30px;
+  color: var(--light-gold);
+  text-shadow: 3px 0px var(--gold), 6px 0px var(--vlight-red), 9px 0px var(--light-red);
+  text-decoration: none;
+}
+
+.nav-link-small a:hover {
   filter: url('#displacementFilter');
 }
 
@@ -100,6 +113,14 @@ font-family: 'Teko', sans-serif;
 .logo {
   width: 33vw;
   max-width: 350px;
+}
+
+#portfolio-menu ul, #portfolio-menu li {
+  flex: 0 1 auto;
+  background-color: var(--red);
+  padding: 8px;
+  align-items: center;
+  z-index: 0;
 }
 
 /** Main Section Style **/

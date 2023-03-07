@@ -14,16 +14,34 @@ const videos = ([
     order: 4,
   },
   {
+    thumbnail: '../rsc/CanineLocomotionAnthonyPellegrino.jpg',
+    thumbnailHover: '../rsc/CanineLocomotionAnthonyPellegrino.gif',
+    vimeoId: '800401785',
+    order: 10,
+  },
+  {
+    thumbnail: '../rsc/Equine Locomotion Anthony Pellegrino.jpg',
+    thumbnailHover: '../rsc/Equine Locomotion Anthony Pellegrino.gif',
+    vimeoId: '800401763',
+    order: 11,
+  },
+  {
     thumbnail: '../rsc/LilSqueakers.jpg',
     thumbnailHover: '../rsc/LilSqueakers.gif',
     vimeoId: '800401121',
     order: 6,
   },
   {
-    thumbnail: '../rsc/Pellegrino Anthony Animated Documentary Final.jpg',
+    thumbnail: '../rsc/Illustration/Pellegrino_Anthony_Alkonost_Character_Design.jpg',
     thumbnailHover: '../rsc/Pellegrino Anthony Animated Documentary Final.gif',
     vimeoId: '800401693',
     order: 0,
+  },
+  {
+    thumbnail: '../rsc/Pellegrino_Anthony_Breaking_It_Down_Oh_Yeah.jpg',
+    thumbnailHover: '../rsc/Pellegrino_Anthony_Breaking_It_Down_Oh_Yeah.gif',
+    vimeoId: '800401403',
+    order: 9,
   },
   {
     thumbnail: '../rsc/Pellegrino_Anthony_Final_Film_Color_Final_120720.jpg',
@@ -55,7 +73,24 @@ const videos = ([
     vimeoId: '800401370',
     order: 5,
   },
-  
+  {
+    thumbnail: '../rsc/AnthonyPellegrinoKnightVSDragonColor.jpg',
+    thumbnailHover: '../rsc/AnthonyPellegrinoKnightVSDragonColor.gif',
+    vimeoId: '800403540',
+    order: 12,
+  },
+  {
+    thumbnail: '../rsc/Pellegrino_Anthony_Character_Animation_Final.jpg',
+    thumbnailHover: '../rsc/Pellegrino_Anthony_Character_Animation_Final.gif',
+    vimeoId: '800403430',
+    order: 14,
+  },
+  {
+    thumbnail: '../rsc/Pellegrino_Anthony_Staging_Skatepark_101920_small.jpg',
+    thumbnailHover: '../rsc/Pellegrino_Anthony_Staging_Skatepark_101920_small.gif',
+    vimeoId: '800403352',
+    order: 13,
+  },
 ]).sort((video1, video2) => video1.order - video2.order);
 
 const Portfolio = () => {
